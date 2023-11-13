@@ -49,7 +49,7 @@ public class Movie extends RentalItem {
     public void showDetails(){
         System.out.println("Item id: " + this.getItemID());
         System.out.println("Item name: " + this.getItemName());
-        System.out.println("Is available: " + this.getItemName());
+        System.out.println("Is available: " + this.isAvailable());
         System.out.println("Director: " + this.director);
         System.out.println("Duration: " + this.duration);
         System.out.println("Age Rating: " + this.ageRating);

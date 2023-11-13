@@ -101,11 +101,16 @@ public class MovieRentalSystem {
         Customer customerFound = validateCustomer(idCustomer);
         if (customerFound == null) return;
 
+        if (customerFound.getRentedMovies().isEmpty()){
+            System.out.println("El cliente no tiene peliculas rentadas");
+            return;
+        }
+
         RentalItem rentalItemFound = validateRentalItem(idRentalItem);
         if (rentalItemFound == null) return;
-
-        //verificamos si la pelicula esta disponible
-        if (!rentalItemFound.isAvailable()){
+        if (rentalItemFound.isAvailable()){
+            System.out.println("Este item no esta rentado");
+        } else {
             customerFound.removeRentedMovie((Movie) rentalItemFound);
             rentalItemFound.setAvailable(true);
             System.out.println("Pelicula devuelta exitosamente");

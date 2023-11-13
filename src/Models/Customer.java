@@ -51,7 +51,18 @@ public class Customer {
     public void showDetails(){
         System.out.println("Customer Name :" + this.customerName);
         System.out.println("Customer ID :" + this.customerID);
-        System.out.println("Rented Movies :" + this.rentedMovies);
-        System.out.println("--------------------------------------------");
+        if(!this.rentedMovies.isEmpty()){
+            System.out.println("Rented Movies :");
+            int contador = 1;
+            for (Movie movie: this.rentedMovies){
+                System.out.println("----------");
+                System.out.println("Movie " + contador + " :");
+                System.out.println("----------");
+                movie.showDetails();
+                contador++;
+            }
+        } else {
+            System.out.println("No rented movies");
+        }
     }
 }

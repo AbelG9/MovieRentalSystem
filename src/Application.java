@@ -48,6 +48,7 @@ public class Application {
 
         //mostrando opciones del menu
         while(true){
+            System.out.println("--------------------------------------------");
             System.out.println("Bienvenido al Sistema de Renta de Peliculas ");
             System.out.println("--------------------------------------------");
             System.out.println("Ingrese 1 para ver las películas a rentar");

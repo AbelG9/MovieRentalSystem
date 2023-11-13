@@ -52,5 +52,6 @@ public class Customer {
         System.out.println("Customer Name :" + this.customerName);
         System.out.println("Customer ID :" + this.customerID);
         System.out.println("Rented Movies :" + this.rentedMovies);
+        System.out.println("--------------------------------------------");
     }
 }

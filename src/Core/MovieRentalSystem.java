@@ -64,11 +64,11 @@ public class MovieRentalSystem {
         }
     }
 
-    public RentalItem validateRentalItem(String itemName){
+    public RentalItem validateRentalItem(int id){
         //verificamos si existe la pelicula
         RentalItem rentalItemFound = null;
         for(RentalItem rentalItem: this.rentalItems){
-            if(rentalItem.getItemName().equals(itemName)){
+            if(rentalItem.getItemID() == id){
                 rentalItemFound = rentalItem;
                 break;
             }
@@ -80,11 +80,11 @@ public class MovieRentalSystem {
             return null;
         }
     }
-    public void rentMovieToCustomer(int id, String itemName){
-        Customer customerFound = validateCustomer(id);
+    public void rentMovieToCustomer(int idCustomer, int idRentalItem){
+        Customer customerFound = validateCustomer(idCustomer);
         if (customerFound == null) return;
 
-        RentalItem rentalItemFound = validateRentalItem(itemName);
+        RentalItem rentalItemFound = validateRentalItem(idRentalItem);
         if (rentalItemFound == null) return;
 
         //verificamos si la pelicula esta disponible
@@ -97,11 +97,11 @@ public class MovieRentalSystem {
         }
     }
 
-    public void returnMovie(int id, String itemName){
-        Customer customerFound = validateCustomer(id);
+    public void returnMovie(int idCustomer, int idRentalItem){
+        Customer customerFound = validateCustomer(idCustomer);
         if (customerFound == null) return;
 
-        RentalItem rentalItemFound = validateRentalItem(itemName);
+        RentalItem rentalItemFound = validateRentalItem(idRentalItem);
         if (rentalItemFound == null) return;
 
         //verificamos si la pelicula esta disponible
@@ -124,10 +124,10 @@ public class MovieRentalSystem {
         }
     }
 
-    public void findRentalItem(String itemName){
+    public void findRentalItem(int idRentalItem){
         RentalItem itemFound = null;
         for(RentalItem rentalItem: this.rentalItems){
-            if(rentalItem.getItemName().equals(itemName)){
+            if(rentalItem.getItemID() == idRentalItem){
                 itemFound = rentalItem;
                 break;
             }

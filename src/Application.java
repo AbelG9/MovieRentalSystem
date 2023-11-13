@@ -60,7 +60,7 @@ public class Application {
 
             int option = sc.nextInt();
             int idCustomer = 0;
-            String itemName = "";
+            int idRentalItem = 0;
             switch (option){
                 case 1:
                     movieRentalSystem.showAllItems();
@@ -69,28 +69,28 @@ public class Application {
                     movieRentalSystem.showAllCustomers();
                     break;
                 case 3:
-                    System.out.println("Ingrese el nombre de la película");
-                    itemName = sc.next();
-                    movieRentalSystem.findRentalItem(itemName);
+                    System.out.println("Ingrese el id de la película");
+                    idRentalItem = sc.nextInt();
+                    movieRentalSystem.findRentalItem(idRentalItem);
                     break;
                 case 4:
-                    System.out.println("Ingrese el idCustomer del cliente");
+                    System.out.println("Ingrese el id del cliente");
                     idCustomer = sc.nextInt();
                     movieRentalSystem.findRentalCustomer(idCustomer);
                     break;
                 case 5:
-                    System.out.println("Ingrese el idCustomer del cliente");
+                    System.out.println("Ingrese el id del cliente");
                     idCustomer = sc.nextInt();
-                    System.out.println("Ingrese el nombre de la película");
-                    itemName = sc.next();
-                    movieRentalSystem.rentMovieToCustomer(idCustomer, itemName);
+                    System.out.println("Ingrese el id de la película");
+                    idRentalItem = sc.nextInt();
+                    movieRentalSystem.rentMovieToCustomer(idCustomer, idRentalItem);
                     break;
                 case 6:
-                    System.out.println("Ingrese el idCustomer del cliente");
+                    System.out.println("Ingrese el id del cliente");
                     idCustomer = sc.nextInt();
-                    System.out.println("Ingrese el nombre de la película");
-                    itemName = sc.next();
-                    movieRentalSystem.returnMovie(idCustomer, itemName);
+                    System.out.println("Ingrese el id de la película");
+                    idRentalItem = sc.nextInt();
+                    movieRentalSystem.returnMovie(idCustomer, idRentalItem);
                     break;
             }
         }
